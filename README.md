@@ -18,7 +18,7 @@ The current version was revised by [Laura Saba](https://www.thesabalab.com/) for
 
 ## Topics
 
-* [Introduction to R](01-intro-to-R.Rmd)
+* [Introduction to R](01-intro-to-R.html)
 * [Aggregating and analyzing data with dplyr](02-dplyr.Rmd)
 * [Plotting data with ggplot2](03-ggplot2.Rmd)
 
