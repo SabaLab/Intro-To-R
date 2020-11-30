@@ -9,7 +9,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Data Carpentry contributors" />
 
 
 <title>Intro to R</title>
@@ -411,7 +410,6 @@ summary {
 
 
 <h1 class="title toc-ignore">Intro to R</h1>
-<h4 class="author">Data Carpentry contributors</h4>
 
 </div>
 
@@ -443,7 +441,7 @@ summary {
 </div>
 <div id="presentation-of-rstudio" class="section level2">
 <h2>Presentation of RStudio</h2>
-<p>Let’s start by learning about RStudio, the Integrated Development Environment (IDE) that we will use to write code, navigate the files found on our computer, inspect the variables we are going to create, and visualize the plots we will generate. RStudio can also be used for other things (e.g., version control, developing packages) that we will not cover during the workshop.</p>
+<p>Let’s start by learning about RStudio, the Integrated Development Environment (IDE) that we will use to write code, navigate the files found on our computer, inspect the variables we are going to create, and visualize the plots we will generate. RStudio can also be used for other things (e.g., version control, developing packages) that we will not cover during this introductory class.</p>
 <p>RStudio is divided into 4 “Panes”: the editor for your scripts and documents (top-left), the R console (bottom-left), your environment/history (top-right), and your files/plots/packages/help/viewer (bottom-right). The placement of these panes and their content can be customized.</p>
 </div>
 <div id="r-as-a-calculator" class="section level2">
@@ -451,9 +449,9 @@ summary {
 <p>The lower-left pane (the R “console”) is where you can interact with R directly. The <code>&gt;</code> sign is the R “prompt”. It indicates that R is waiting for you to type something.</p>
 <p>You can type <kbd><code>Ctrl</code></kbd> + <kbd><code>Shift</code></kbd> + <kbd><code>2</code></kbd> to focus just on the R console pane. Use <kbd><code>Ctrl</code></kbd> + <kbd><code>Shift</code></kbd> + <kbd><code>0</code></kbd> to get back to the four panes. I use this when teaching but not otherwise.</p>
 <p>Let’s start by subtracting a couple of numbers.</p>
-<pre class="r"><code>2016 - 1969</code></pre>
-<pre><code>## [1] 47</code></pre>
-<p>R does the calculation and prints the result, and then you get the <code>&gt;</code> prompt again. We won’t discuss what that number might mean. (The <code>[1]</code> in the results is a bit weird; you can ignore that for now.)</p>
+<pre class="r"><code>2020 - 1979</code></pre>
+<pre><code>## [1] 41</code></pre>
+<p>R does the calculation and prints the result, and then you get the <code>&gt;</code> prompt again. (The <code>[1]</code> in the results is a bit weird; you can ignore that for now.)</p>
 <p>You can use R as a calculator in this way.</p>
 <pre class="r"><code>4*6
 4/6
@@ -465,38 +463,39 @@ log10(4)</code></pre>
 <h2>Need for Scripts</h2>
 <p>We can go along, typing directly into the R console. But there won’t be an easy way to keep track of what we’ve done.</p>
 <p>It’s best to write R “scripts” (files with R code), and work from them. And when we start creating scripts, we need to worry about how we organize the scripts and data for a project.</p>
-<p>And so let’s pause for a moment and talk about file organization.</p>
+<p>So let’s pause for a moment and talk about file organization.</p>
 </div>
 <div id="creating-an-r-project" class="section level2">
 <h2>Creating an R Project</h2>
 <p>It is good practice to keep a set of related data, analyses, and text self-contained in a single folder, called the <strong>working directory</strong>. All of the scripts within this folder can then use <em>relative paths</em> to files that indicate where inside the project a file is located (as opposed to absolute paths, which point to where a file is on a specific computer). Working this way makes it a lot easier to move your project around on your computer and share it with others without worrying about whether or not the underlying scripts will still work.</p>
 <p>RStudio provides a helpful set of tools to do this through its “Projects” interface, which can create a working directory for you (or use an existing one) and also remembers its location (allowing you to quickly navigate to it) and optionally preserves custom settings and open files to make it easier to resume work after a break. Below, we will go through the steps for creating an RProject for this tutorial.</p>
-<p>We assume you’ve already got a <code>SoftwareCarpentry</code> folder that you’re going to use.</p>
+<p>I recommend that you create a <code>StatsClass-IntroToR</code> folder on your computer that you will use for today.</p>
 <ul>
-<li>Start RStudio (presentation of RStudio -below- should happen here)</li>
-<li>Under the <code>File</code> menu, click on <code>New project</code>, choose <code>Existing directory</code>, then click the “<code>Browse</code>” button and find your <code>SoftwareCarpentry</code> folder.</li>
+<li>Start RStudio</li>
+<li>Under the <code>File</code> menu, click on <code>New project</code>, choose <code>Existing directory</code>, then click the “<code>Browse</code>” button and find your <code>StatsClass-IntroToR</code> folder.</li>
 <li>Click on “Create project”</li>
-<li>Create a new R script (File &gt; New File &gt; R script) and save it in your <code>Code</code> subfolder (e.g. <code>~/SoftwareCarpentry/Code</code>)</li>
+<li>Create a new R script (File &gt; New File &gt; R script) and save it in a <code>code</code> subfolder (e.g. <code>~/Documents/StatsClass-IntroToR/code</code>)</li>
 </ul>
 </div>
-<div id="interacting-with-r" class="section level2">
-<h2>Interacting with R</h2>
+<div id="interacting-with-r" class="section level1">
+<h1>Interacting with R</h1>
 <p>While you can type R commands directly at the <code>&gt;</code> prompt in the R console, I recommend typing your commands into a script, which you’ll save for later reference, and then executing the commands from there.</p>
 <p>Start by typing the following into the R script in the top-left pane.</p>
 <pre class="r"><code># R intro
 
-2016 - 1969</code></pre>
+2020 - 1979</code></pre>
+<p>NOTE: I will use <kbd><code>Ctrl</code></kbd> in the instructions below. Most often, this is true for PCs and <kbd><code>command</code></kbd> should be used in its place for Macs.</p>
 <p>Save the file clicking the computer disk icon, or by typing <kbd><code>Ctrl</code></kbd> + <kbd><code>S</code></kbd>.</p>
-<p>Now place the cursor on the line with <code>2016 - 1969</code> and type <kbd><code>Ctrl</code></kbd> + <kbd><code>Enter</code></kbd>. The command will be copied to the R console and executed, and then the cursor will move to the next line.</p>
+<p>Now place the cursor on the line with <code>2020 - 1979</code> and type <kbd><code>Ctrl</code></kbd> + <kbd><code>Enter</code></kbd>. The command will be copied to the R console and executed, and then the cursor will move to the next line.</p>
 <p>You can also highlight a bunch of code and execute the block all at once with <kbd><code>Ctrl</code></kbd> + <kbd><code>Enter</code></kbd>.</p>
 <div id="commenting" class="section level3">
 <h3>Commenting</h3>
 <p>Use <code>#</code> signs to comment. Anything to the right of a <code>#</code> is ignored by R, meaning it won’t be executed. Comments are a great way to describe what your code does within the code itself, so comment liberally in your R scripts.</p>
 </div>
-</div>
-<div id="plunge-straight-into-the-survey-data" class="section level2">
-<h2>Plunge straight into the Survey Data</h2>
-<p>We will continue to look at the species and weight of animals caught in plots in a study area in Arizona over time. The dataset is stored as a CSV file: each row holds information for a single animal, and the columns represent:</p>
+<div id="plunge-straight-into-the-data-about-fungus-toxins-from-chapter-15" class="section level2">
+<h2>Plunge straight into the data about fungus toxins from Chapter 15</h2>
+<p>A drug precursor molecule is extracted from a type of nut. The nuts are commonly contaminated by a fungal toxin that is difficult to remove during the purification process. We suspect that the amount of fungus (and hence toxin) depends on multiple factoors related to the growing site.</p>
+<p>The dataset is stored as a CSV file: each row holds information for a single site, and the columns represent:</p>
 <table>
 <thead>
 <tr class="header">
@@ -506,62 +505,39 @@ log10(4)</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td>record_id</td>
-<td>Unique id for the observation</td>
+<td>lot</td>
+<td>Unique id for the particular growing site</td>
 </tr>
 <tr class="even">
-<td>month</td>
-<td>month of observation</td>
+<td>rain</td>
+<td>average weekly rainfall in cm</td>
 </tr>
 <tr class="odd">
-<td>day</td>
-<td>day of observation</td>
+<td>noon_temp</td>
+<td>average temperature at noon in degrees Celsius</td>
 </tr>
 <tr class="even">
-<td>year</td>
-<td>year of observation</td>
+<td>sunshine</td>
+<td>average hours of sunlight per day</td>
 </tr>
 <tr class="odd">
-<td>plot_id</td>
-<td>ID of a particular plot</td>
+<td>wind_speed</td>
+<td>average wind speed in kilometers per hour</td>
 </tr>
 <tr class="even">
-<td>species_id</td>
-<td>2-letter code</td>
+<td>toxin</td>
+<td>level of toxin in micrograms per 100 grams</td>
 </tr>
 <tr class="odd">
-<td>sex</td>
-<td>sex of animal (“M”, “F”)</td>
-</tr>
-<tr class="even">
-<td>hindfoot_length</td>
-<td>length of the hindfoot in mm</td>
-</tr>
-<tr class="odd">
-<td>weight</td>
-<td>weight of the animal in grams</td>
-</tr>
-<tr class="even">
-<td>genus</td>
-<td>genus of animal</td>
-</tr>
-<tr class="odd">
-<td>species</td>
-<td>species of animal</td>
-</tr>
-<tr class="even">
-<td>taxa</td>
-<td>e.g. Rodent, Reptile, Bird, Rabbit</td>
-</tr>
-<tr class="odd">
-<td>plot_type</td>
-<td>type of plot</td>
+<td>town</td>
+<td>nearest town</td>
 </tr>
 </tbody>
 </table>
-<p>The data are available at <a href="http://kbroman.org/datacarp/portal_data_joined.csv" class="uri">http://kbroman.org/datacarp/portal_data_joined.csv</a>.</p>
-<p>We can read that data straight from the web, as follows</p>
-<pre class="r"><code>surveys &lt;- read.csv(&quot;http://kbroman.org/datacarp/portal_data_joined.csv&quot;)</code></pre>
+<p>The data are available at <a href="https://github.com/SabaLab/Intro-To-R/blob/main/data/Chapter15_toxicFungus.csv" class="uri">https://github.com/SabaLab/Intro-To-R/blob/main/data/Chapter15_toxicFungus.csv</a>.</p>
+<p>Save the csv file in your <code>StatsClass-IntroToR</code> folder in a new subfolder called <code>data</code>.</p>
+<p>Now, you can read your data into R.</p>
+<pre class="r"><code>toxin &lt;- read.csv(&quot;data/Chapter15_toxicFungus.csv&quot;) </code></pre>
 <div id="functions" class="section level3">
 <h3>Functions</h3>
 <p><code>read.csv</code> is a “function”. It does something, and “returns” some result.</p>
@@ -586,36 +562,36 @@ log10(4)</code></pre>
 <p>They cannot start with a number (<code>2x</code> is not valid, but <code>x2</code> is).</p>
 <p>R is case sensitive (e.g., <code>weight_kg</code> is different from <code>Weight_kg</code>). There are some names that cannot be used because they are the names of fundamental functions in R (e.g., <code>if</code>, <code>else</code>, <code>for</code>, see <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html">here</a> for a complete list).</p>
 <p>In general, even if it’s allowed, it’s best to not use other function names (e.g., <code>c</code>, <code>T</code>, <code>mean</code>, <code>data</code>, <code>df</code>, <code>weights</code>). If in doubt, type the name to see if it’s already in use.</p>
-<p>It’s also best to avoid dots (<code>.</code>) within a variable name as in <code>my.dataset</code>. There are many functions in R with dots in their names for historical reasons, but because dots have a special meaning in R (for methods) and other programming languages, it’s best to avoid them. It is also recommended to use nouns for variable names, and verbs for function names. It’s important to be consistent in the styling of your code (where you put spaces, how you name variable, etc.). In R, two popular style guides are <a href="http://adv-r.had.co.nz/Style.html">Hadley Wickham’s</a> and <a href="https://google.github.io/styleguide/Rguide.xml">Google’s</a>.</p>
+<p>It’s also best to avoid dots (<code>.</code>) within a variable name as in <code>my.dataset</code>. There are many functions in R with dots in their names for historical reasons, but because dots have a special meaning in R (for methods) and other programming languages, it’s best to avoid them. It is also recommended to use nouns for variable names, and verbs for function names. It’s important to be consistent in the styling of your code (where you put spaces, how you name variable, etc.). In R, two popular style guides are <a href="http://adv-r.had.co.nz/Style.html">Hadley Wickham’s</a>, <a href="https://style.tidyverse.org/">tidyverse’s</a>, and <a href="https://google.github.io/styleguide/Rguide.xml">Google’s</a>.</p>
 </div>
 <div id="getting-help" class="section level3">
 <h3>Getting help</h3>
 <p>If you type <code>read.csv</code> and pause for a moment, you’ll get a pop-up with information about the function.</p>
 <p>Alternatively, you could type</p>
 <pre class="r"><code>?read.csv</code></pre>
-<p>and the documentation for the function will show up in the lower-right pane. These are often a bit <em>too</em> detailed, and so they take some practice to read. I generally focus on Usage and Arguments, and then on Examples at the bottom. We’ll talk more about getting help later.</p>
+<p>and the documentation for the function will show up in the lower-right pane. These are often a bit <em>too</em> detailed, and so they take some practice to read. I generally focus on Usage and Arguments, and then on Examples at the bottom.</p>
 </div>
 </div>
 <div id="data-frames" class="section level2">
 <h2>Data frames</h2>
 <p>The data are stored in what’s called a “data frame”. It’s a big rectangle, with rows being observations and columns being variables. The different columns can be different types (numeric, character, etc.), but they’re all the same length.</p>
 <p>Use <code>head()</code> to view the first few rows.</p>
-<pre class="r"><code>head(surveys)</code></pre>
+<pre class="r"><code>head(toxin)</code></pre>
 <p>Use <code>tail()</code> to view the last few rows.</p>
-<pre class="r"><code>tail(surveys)</code></pre>
+<pre class="r"><code>tail(toxin)</code></pre>
 <p>Use <code>str()</code> to look at the structure of the data.</p>
-<pre class="r"><code>str(surveys)</code></pre>
-<p>This shows that there are 34786 rows and 13 columns, and then for each column, it gives information about the data type and shows the first few values.</p>
+<pre class="r"><code>str(toxin)</code></pre>
+<p>This shows that there are 10 rows and 7 columns, and then for each column, it gives information about the data type and shows the first few values.</p>
 <p>For these data, the columns have two types: integer, or “Factor”. Factor columns are text with a discrete set of possible values. We’ll come back to this in a bit.</p>
 <div id="challenge" class="section level3">
 <h3>Challenge</h3>
-<p>Study the output of <code>str(surveys)</code>. How are the missing values being treated?</p>
+<p>Study the output of <code>str(toxin)</code>. How are the missing values being treated?</p>
 <!-- end challenge -->
 </div>
 <div id="another-summary" class="section level3">
 <h3>Another summary</h3>
 <p>Another useful function in <code>summary()</code>.</p>
-<pre class="r"><code>summary(surveys)</code></pre>
+<pre class="r"><code>summary(toxin)</code></pre>
 <p>For the numeric data, you get six statistics (min, 1st quartile (25th percentile), median, mean, 3rd quartile (75th percentile), and max). For the factors, you get a table with counts for the most-frequent “levels”, and then for the rest.</p>
 </div>
 </div>
@@ -647,38 +623,29 @@ log10(4)</code></pre>
 </ul>
 <p>Note: most of these functions are “generic”, they can be used on other types of objects besides <code>data.frame</code>.</p>
 </div>
-<div id="maybe-download-the-file-first" class="section level2">
-<h2>Maybe download the file first</h2>
-<p>It probably is best to first download the file, so that we have a local copy, and then read it in.</p>
-<p>We could first use <code>download_file()</code> to download the data into the <code>data/</code> subdirectory:</p>
-<pre class="r"><code>download.file(&quot;http://kbroman.org/datacarp/portal_data_joined.csv&quot;,
-              &quot;data/portal_data_joined.csv&quot;)</code></pre>
-<p>We could then use <code>read.csv()</code> to load the data into R, from the downloaded file:</p>
-<pre class="r"><code>surveys &lt;- read.csv(&#39;data/portal_data_joined.csv&#39;)</code></pre>
-</div>
 <div id="indexing-sequences-and-subsetting" class="section level2">
 <h2>Indexing, Sequences, and Subsetting</h2>
 <p>We can pull out parts of a data frame using square brackets. We need to provide two values: row and column, with a comma between them.</p>
 <p>For example, to get the element in the 1st row, 1st column:</p>
-<pre class="r"><code>surveys[1,1]</code></pre>
+<pre class="r"><code>toxin[1,1]</code></pre>
 <p>To get the element in the 2nd row, 7th column:</p>
-<pre class="r"><code>surveys[2,7]</code></pre>
+<pre class="r"><code>toxin[2,7]</code></pre>
 <p>To get the entire 2nd row, leave the column part blank:</p>
-<pre class="r"><code>surveys[2,]</code></pre>
+<pre class="r"><code>toxin[2,]</code></pre>
 <p>And to get the entire 7th column, leave the row part blank:</p>
-<pre class="r"><code>sex &lt;- surveys[,7]</code></pre>
+<pre class="r"><code>town &lt;- toxin[,7]</code></pre>
 <p>You can also refer to columns by name, in multiple ways.</p>
-<pre class="r"><code>sex &lt;- surveys[, &quot;sex&quot;]
-sex &lt;- surveys$sex
-sex &lt;- surveys[[&quot;sex&quot;]]</code></pre>
+<pre class="r"><code>town &lt;- toxin[, &quot;town&quot;]
+town &lt;- toxin$town
+town &lt;- toxin[[&quot;town&quot;]]</code></pre>
 <p>When we pull out a single column, the result is a “vector”. We can again use square brackets to pull out individual values, but providing a single number.</p>
-<pre class="r"><code>sex[1]
-sex[10000]</code></pre>
+<pre class="r"><code>town[1]
+town[10]</code></pre>
 <div id="slices" class="section level3">
 <h3>Slices</h3>
 <p>You can pull out larger slices from the vector by providing vectors of indices. You can use the <code>c()</code> function to create a vector.</p>
 <pre class="r"><code>c(1,3,5)
-sex[c(1,3,5)]</code></pre>
+town[c(1,3,5)]</code></pre>
 <p>To pull out larger slices, it’s helpful to have ways of creating sequences of numbers.</p>
 <p>First, the operator <code>:</code> gives you a sequence of consecutive values.</p>
 <pre class="r"><code>1:10
@@ -691,14 +658,14 @@ seq(50, by=5, length.out=10)
 seq(1, 8, by=3) # sequence stops to stay below upper limit
 seq(10, 2, by=-2)  # can also go backwards</code></pre>
 <p>To get slices of our data frame, we can include a vector for the row or column indexes (or both)</p>
-<pre class="r"><code>surveys[1:3, 7]   # first three elements in the 7th column
-surveys[1, 1:3]   # first three columns in the first row
-surveys[2:4, 6:7] # rows 2-4, columns 6-7</code></pre>
+<pre class="r"><code>toxin[1:3, 7]   # first three elements in the 7th column
+toxin[1, 1:3]   # first three columns in the first row
+toxin[2:4, 6:7] # rows 2-4, columns 6-7</code></pre>
 </div>
 <div id="challenge-1" class="section level3">
 <h3>Challenge</h3>
 <p>The function <code>nrow()</code> on a <code>data.frame</code> returns the number of rows.</p>
-<p>Use <code>nrow()</code>, in conjuction with <code>seq()</code> to create a new <code>data.frame</code> called <code>surveys_by_10</code> that includes every 10th row of the survey data frame starting at row 10 (10, 20, 30, …)</p>
+<p>Use <code>nrow()</code>, in conjunction with <code>seq()</code> to create a new <code>data.frame</code> called <code>toxin_by_2</code> that includes every other row of the toxin data frame starting at row 2 (2, 4, 6, …)</p>
 <!-- end challenge -->
 </div>
 </div>
@@ -716,11 +683,6 @@ max(heights, na.rm = TRUE)</code></pre>
 heights[!is.na(heights)]
 ## shortcut to that
 na.omit(heights)</code></pre>
-<div id="treating-blanks-as-missing" class="section level3">
-<h3>Treating blanks as missing</h3>
-<p>Another aside: it’s probably best to treat those blanks as missing (<code>NA</code>). To do that, use the argument <code>na.strings</code> when reading the data. <code>na.strings</code> can be a vector of multiple character strings. We need that a missing value code can never exist as a valid value, because they all will be converted to the missing data code <code>NA</code>. And note that the default for <code>na.strings</code> is <code>&quot;NA&quot;</code>, which will cause problems if <code>&quot;NA&quot;</code> is a valid value for your data (e.g., as an abbreviation <code>&quot;North America&quot;</code>).</p>
-<pre class="r"><code>surveys_noblanks &lt;- read.csv(&quot;data/portal_data_joined.csv&quot;, na.strings=&quot;&quot;)</code></pre>
-</div>
 </div>
 <div id="factors" class="section level2">
 <h2>Factors</h2>
@@ -774,9 +736,10 @@ table(expt)
 <h3>stringsAsFactors</h3>
 <p>The default when reading in data with <code>read.csv()</code>, columns with text get turned into factors.</p>
 <p>You can avoid this with the argument <code>stringsAsFactors=FALSE</code>.</p>
-<pre class="r"><code>surveys_chr &lt;- read.csv(&quot;data/portal_data_joined.csv&quot;, stringsAsFactors=FALSE)</code></pre>
+<pre class="r"><code>toxin_chr &lt;- read.csv(&quot;data/Chapter15_toxicFungus.csv&quot;, stringsAsFactors=FALSE)</code></pre>
 <p>Then when you look at the result of <code>str()</code>, you’ll see that the previously factor columns are now <code>chr</code>.</p>
-<pre class="r"><code>str(surveys_chr)</code></pre>
+<pre class="r"><code>str(toxin_chr)</code></pre>
+</div>
 </div>
 </div>
 
