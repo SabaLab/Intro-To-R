@@ -14,7 +14,7 @@ knitr::opts_chunk$set(results='hide', fig.path='img/r-lesson-')
 
 > ## Learning Objectives
 >
-> * load external data (CSV files) in memory using the survey table
+> * load external data (CSV files) in memory using the toxin table
 >  (`surveys.csv`) as an example
 > * explore the structure and the content of a data frame in R
 > * understand what factors are and how to manipulate them
@@ -161,7 +161,7 @@ code does within the code itself, so comment liberally in your R scripts.
 
 ## Plunge straight into the data about fungus toxins from Chapter 15
 
-A drug precursor molecule is extracted from a type of nut. The nuts are commonly contaminated by a fungal toxin that is difficult to remove during the purification process. We suspect that the amount of fungus (and hence toxin) depends on multiple factoors related to the growing site. 
+A drug precursor molecule is extracted from a type of nut. The nuts are commonly contaminated by a fungal toxin that is difficult to remove during the purification process. We suspect that the amount of fungus (and hence toxin) depends on multiple factors related to the growing site. 
 
 The dataset is stored as a CSV file: each row holds information for a single site, and the
 columns represent:

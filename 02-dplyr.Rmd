@@ -1,12 +1,13 @@
 ---
 layout: topic
 title: Aggregating and analyzing data with dplyr
-author: Data Carpentry contributors
+output:
+  md_document:
+    variant: markdown_github
 ---
 
 ```{r, echo=FALSE, message = FALSE}
-surveys <- read.csv("http://kbroman.org/datacarp/portal_data_joined.csv")
-#surveys <- read.csv("data/portal_data_joined.csv")
+toxin <- read.csv("data/Chapter15_toxicFungus.csv")
 ```
 
 ------------
