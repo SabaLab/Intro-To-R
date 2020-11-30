@@ -1,6 +1,9 @@
 ---
 layout: topic
 title: Intro to R
+output:
+  md_document:
+    variant: markdown_github
 ---
 
 ```{r knitr_options, echo=FALSE}
