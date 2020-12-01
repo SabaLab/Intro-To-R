@@ -14,18 +14,14 @@ The current version was revised by [Laura Saba](https://www.thesabalab.com/) for
 
 > ## Prerequisites
 >
-> * Having RStudio installed
+> * Having R and RStudio installed
 
 ## Topics
 
 * [Introduction to R](01-intro-to-R.md)
 * [Aggregating and analyzing data with dplyr](02-dplyr.md)
-* [Plotting data with ggplot2](03-ggplot2.md)
 
 ## Other resources
 
 * [Motivation](motivation.md)
 
-## Organization of the repository
-
-The lessons are written in Rmarkdown. 

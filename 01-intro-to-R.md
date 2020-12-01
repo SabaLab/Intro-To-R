@@ -3,7 +3,7 @@
 > Learning Objectives
 > -------------------
 >
-> -   load external data (CSV files) in memory using the survey table
+> -   load external data (CSV files) in memory using the toxin table
 >     (`surveys.csv`) as an example
 > -   explore the structure and the content of a data frame in R
 > -   understand what factors are and how to manipulate them
@@ -120,8 +120,8 @@ computer that you will use for today.
     `Existing directory`, then click the “`Browse`” button and find your
     `StatsClass-IntroToR` folder.
 -   Click on “Create project”
--   Create a new R script (File \> New File \> R script) and save it in
-    a `code` subfolder (e.g. `~/Documents/StatsClass-IntroToR/code`)
+-   Create a new R script (File &gt; New File &gt; R script) and save it
+    in a `code` subfolder (e.g. `~/Documents/StatsClass-IntroToR/code`)
 
 Interacting with R
 ==================
@@ -166,7 +166,7 @@ Plunge straight into the data about fungus toxins from Chapter 15
 A drug precursor molecule is extracted from a type of nut. The nuts are
 commonly contaminated by a fungal toxin that is difficult to remove
 during the purification process. We suspect that the amount of fungus
-(and hence toxin) depends on multiple factoors related to the growing
+(and hence toxin) depends on multiple factors related to the growing
 site.
 
 The dataset is stored as a CSV file: each row holds information for a
@@ -312,7 +312,6 @@ Study the output of `str(toxin)`. How are the missing values being
 treated?
 
 <!-- end challenge -->
-
 ### Another summary
 
 Another useful function in `summary()`.
@@ -451,7 +450,6 @@ called `toxin_by_2` that includes every other row of the toxin data
 frame starting at row 2 (2, 4, 6, …)
 
 <!-- end challenge -->
-
 Missing data
 ------------
 
@@ -572,7 +570,6 @@ expt <- factor(expt, levels=c("treat1", "treat2", "treat3", "control"))
 table(expt)
 ```
 --->
-
 ### stringsAsFactors
 
 The default when reading in data with `read.csv()`, columns with text
