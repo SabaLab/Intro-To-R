@@ -4,7 +4,7 @@
 > -------------------
 >
 > -   load external data (CSV files) in memory using the toxin table
->     (`surveys.csv`) as an example
+>     (`Chapter15_toxicFungus.csv`) as an example
 > -   explore the structure and the content of a data frame in R
 > -   understand what factors are and how to manipulate them
 > -   understand the concept of a `data.frame`
