@@ -1,7 +1,6 @@
 ------------------------------------------------------------------------
 
-> Learning Objectives
-> -------------------
+> ## Learning Objectives
 >
 > -   load external data (CSV files) in memory using the toxin table
 >     (`Chapter15_toxicFungus.csv`) as an example
@@ -13,8 +12,7 @@
 
 ------------------------------------------------------------------------
 
-Basics of R
------------
+## Basics of R
 
 R is a versatile, open source programming/scripting language that’s
 useful both for statistics but also data science. Inspired by the
@@ -31,8 +29,7 @@ programming language S.
     language](http://adv-r.had.co.nz/Functional-programming.html).
 -   Large and growing community of peers.
 
-Presentation of RStudio
------------------------
+## Presentation of RStudio
 
 Let’s start by learning about RStudio, the Integrated Development
 Environment (IDE) that we will use to write code, navigate the files
@@ -47,8 +44,7 @@ environment/history (top-right), and your
 files/plots/packages/help/viewer (bottom-right). The placement of these
 panes and their content can be customized.
 
-R as a calculator
------------------
+## R as a calculator
 
 The lower-left pane (the R “console”) is where you can interact with R
 directly. The `>` sign is the R “prompt”. It indicates that R is waiting
@@ -62,10 +58,10 @@ this when teaching but not otherwise.
 Let’s start by subtracting a couple of numbers.
 
 ``` r
-2020 - 1979
+2021 - 1979
 ```
 
-    ## [1] 41
+    ## [1] 42
 
 R does the calculation and prints the result, and then you get the `>`
 prompt again. (The `[1]` in the results is a bit weird; you can ignore
@@ -81,8 +77,7 @@ log(4)
 log10(4)
 ```
 
-Need for Scripts
-----------------
+## Need for Scripts
 
 We can go along, typing directly into the R console. But there won’t be
 an easy way to keep track of what we’ve done.
@@ -93,8 +88,7 @@ organize the scripts and data for a project.
 
 So let’s pause for a moment and talk about file organization.
 
-Creating an R Project
----------------------
+## Creating an R Project
 
 It is good practice to keep a set of related data, analyses, and text
 self-contained in a single folder, called the **working directory**. All
@@ -120,11 +114,10 @@ computer that you will use for today.
     `Existing directory`, then click the “`Browse`” button and find your
     `StatsClass-IntroToR` folder.
 -   Click on “Create project”
--   Create a new R script (File &gt; New File &gt; R script) and save it
-    in a `code` subfolder (e.g. `~/Documents/StatsClass-IntroToR/code`)
+-   Create a new R script (File \> New File \> R script) and save it in
+    a `code` subfolder (e.g. `~/Documents/StatsClass-IntroToR/code`)
 
-Interacting with R
-==================
+# Interacting with R
 
 While you can type R commands directly at the `>` prompt in the R
 console, I recommend typing your commands into a script, which you’ll
@@ -135,7 +128,7 @@ Start by typing the following into the R script in the top-left pane.
 ``` r
 # R intro
 
-2020 - 1979
+2021 - 1979
 ```
 
 NOTE: I will use <kbd>`Ctrl`</kbd> in the instructions below. Most
@@ -145,7 +138,7 @@ its place for Macs.
 Save the file clicking the computer disk icon, or by typing
 <kbd>`Ctrl`</kbd> + <kbd>`S`</kbd>.
 
-Now place the cursor on the line with `2020 - 1979` and type
+Now place the cursor on the line with `2021 - 1979` and type
 <kbd>`Ctrl`</kbd> + <kbd>`Enter`</kbd>. The command will be copied to
 the R console and executed, and then the cursor will move to the next
 line.
@@ -160,8 +153,7 @@ R, meaning it won’t be executed. Comments are a great way to describe
 what your code does within the code itself, so comment liberally in your
 R scripts.
 
-Plunge straight into the data about fungus toxins from Chapter 15
------------------------------------------------------------------
+## Plunge straight into the data about fungus toxins from Chapter 15
 
 A drug precursor molecule is extracted from a type of nut. The nuts are
 commonly contaminated by a fungal toxin that is difficult to remove
@@ -172,18 +164,18 @@ site.
 The dataset is stored as a CSV file: each row holds information for a
 single site, and the columns represent:
 
-| Column      | Description                                    |
-|-------------|------------------------------------------------|
-| lot         | Unique id for the particular growing site      |
-| rain        | average weekly rainfall in cm                  |
-| noon\_temp  | average temperature at noon in degrees Celsius |
-| sunshine    | average hours of sunlight per day              |
-| wind\_speed | average wind speed in kilometers per hour      |
-| toxin       | level of toxin in micrograms per 100 grams     |
-| town        | nearest town                                   |
+| Column     | Description                                    |
+|------------|------------------------------------------------|
+| lot        | Unique id for the particular growing site      |
+| rain       | average weekly rainfall in cm                  |
+| noon_temp  | average temperature at noon in degrees Celsius |
+| sunshine   | average hours of sunlight per day              |
+| wind_speed | average wind speed in kilometers per hour      |
+| toxin      | level of toxin in micrograms per 100 grams     |
+| town       | nearest town                                   |
 
 The data are available at
-<a href="https://github.com/SabaLab/Intro-To-R/blob/main/data/Chapter15_toxicFungus.csv" class="uri">https://github.com/SabaLab/Intro-To-R/blob/main/data/Chapter15_toxicFungus.csv</a>.
+<https://github.com/SabaLab/Intro-To-R/blob/main/data/Chapter15_toxicFungus.csv>.
 
 Save the csv file in your `StatsClass-IntroToR` folder in a new
 subfolder called `data`.
@@ -272,8 +264,7 @@ pane. These are often a bit *too* detailed, and so they take some
 practice to read. I generally focus on Usage and Arguments, and then on
 Examples at the bottom.
 
-Data frames
------------
+## Data frames
 
 The data are stored in what’s called a “data frame”. It’s a big
 rectangle, with rows being observations and columns being variables. The
@@ -298,13 +289,11 @@ Use `str()` to look at the structure of the data.
 str(toxin)
 ```
 
-This shows that there are 10 rows and 7 columns, and then for each
-column, it gives information about the data type and shows the first few
-values.
+This shows that there are 10 observations/rows and 7 variables/columns,
+and then for each column, it gives information about the data type and
+shows the first few values.
 
-For these data, the columns have two types: integer, or “Factor”. Factor
-columns are text with a discrete set of possible values. We’ll come back
-to this in a bit.
+For these data, the columns have two types: number or character.
 
 ### Challenge
 
@@ -312,6 +301,7 @@ Study the output of `str(toxin)`. How are the missing values being
 treated?
 
 <!-- end challenge -->
+
 ### Another summary
 
 Another useful function in `summary()`.
@@ -322,11 +312,9 @@ summary(toxin)
 
 For the numeric data, you get six statistics (min, 1st quartile (25th
 percentile), median, mean, 3rd quartile (75th percentile), and max). For
-the factors, you get a table with counts for the most-frequent “levels”,
-and then for the rest.
+the characters, you get a length, class, and mode.
 
-Inspecting data frames
-----------------------
+## Inspecting data frames
 
 We already saw how the functions `head()` and `str()` can be useful to
 check the content and the structure of a `data.frame`. Here is a
@@ -354,8 +342,7 @@ of the data.
 Note: most of these functions are “generic”, they can be used on other
 types of objects besides `data.frame`.
 
-Indexing, Sequences, and Subsetting
------------------------------------
+## Indexing, Sequences, and Subsetting
 
 We can pull out parts of a data frame using square brackets. We need to
 provide two values: row and column, with a comma between them.
@@ -450,8 +437,8 @@ called `toxin_by_2` that includes every other row of the toxin data
 frame starting at row 2 (2, 4, 6, …)
 
 <!-- end challenge -->
-Missing data
-------------
+
+## Missing data
 
 As R was designed to analyze datasets, it includes the concept of
 missing data (which is uncommon in other programming languages). Missing
@@ -484,8 +471,7 @@ heights[!is.na(heights)]
 na.omit(heights)
 ```
 
-Factors
--------
+## Factors
 
 Factors are used to represent categorical data. Factors can be ordered
 or unordered, and understanding them is necessary for statistical
@@ -570,20 +556,3 @@ expt <- factor(expt, levels=c("treat1", "treat2", "treat3", "control"))
 table(expt)
 ```
 --->
-### stringsAsFactors
-
-The default when reading in data with `read.csv()`, columns with text
-get turned into factors.
-
-You can avoid this with the argument `stringsAsFactors=FALSE`.
-
-``` r
-toxin_chr <- read.csv("data/Chapter15_toxicFungus.csv", stringsAsFactors=FALSE)
-```
-
-Then when you look at the result of `str()`, you’ll see that the
-previously factor columns are now `chr`.
-
-``` r
-str(toxin_chr)
-```

@@ -68,7 +68,7 @@ use this when teaching but not otherwise.
 Let's start by subtracting a couple of numbers.
 
 ```{r add, results='show'}
-2020 - 1979
+2021 - 1979
 ```
 
 R does the calculation and prints the result, and then you get the `>`
@@ -135,7 +135,7 @@ Start by typing the following into the R script in the top-left pane.
 ```{r rscript}
 # R intro
 
-2020 - 1979
+2021 - 1979
 ```
 
 NOTE: I will use <kbd>`Ctrl`</kbd> in the instructions below. Most often, this is true for PCs and <kbd>`command`</kbd> should be used in its place for Macs.
@@ -143,7 +143,7 @@ NOTE: I will use <kbd>`Ctrl`</kbd> in the instructions below. Most often, this i
 Save the file clicking the computer disk icon, or by typing
 <kbd>`Ctrl`</kbd> + <kbd>`S`</kbd>.
 
-Now place the cursor on the line with `2020 - 1979` and type
+Now place the cursor on the line with `2021 - 1979` and type
 <kbd>`Ctrl`</kbd> + <kbd>`Enter`</kbd>. The command will be copied to
 the R console and executed, and then the cursor will move to the next
 line.
@@ -294,13 +294,11 @@ Use `str()` to look at the structure of the data.
 str(toxin)
 ```
 
-This shows that there are `r nrow(toxin)` rows and `r ncol(toxin)` 
-columns, and then for each column, it gives information about the data
+This shows that there are `r nrow(toxin)` observations/rows and `r ncol(toxin)` 
+variables/columns, and then for each column, it gives information about the data
 type and shows the first few values.
 
-For these data, the columns have two types: integer, or "Factor".
-Factor columns are text with a discrete set of possible values. We'll
-come back to this in a bit.
+For these data, the columns have two types: number or character.
 
 ### Challenge
 
@@ -317,8 +315,8 @@ summary(toxin)
 ```
 
 For the numeric data, you get six statistics (min, 1st quartile (25th percentile),
-median, mean, 3rd quartile (75th percentile), and max). For the factors, you get a
-table with counts for the most-frequent "levels", and then for the rest.
+median, mean, 3rd quartile (75th percentile), and max). For the characters, you get a
+length, class, and mode.
 
 
 ## Inspecting data frames
@@ -575,20 +573,3 @@ table(expt)
 ```
 --->
 
-### stringsAsFactors
-
-The default when reading in data with `read.csv()`, columns with text
-get turned into factors.
-
-You can avoid this with the argument `stringsAsFactors=FALSE`.
-
-```{r read_csv_stringsAsFactors, eval=FALSE}
-toxin_chr <- read.csv("data/Chapter15_toxicFungus.csv", stringsAsFactors=FALSE)
-```
-
-Then when you look at the result of `str()`, you'll see that the
-previously factor columns are now `chr`.
-
-```{r str_on_that, eval=FALSE}
-str(toxin_chr)
-```

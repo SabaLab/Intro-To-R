@@ -1,7 +1,6 @@
 ------------------------------------------------------------------------
 
-Data Manipulation using dplyr
-=============================
+# Data Manipulation using dplyr
 
 Bracket subsetting is handy, but it can be cumbersome and difficult to
 read, especially for complicated operations. Enter `dplyr`. `dplyr` is a
@@ -33,8 +32,7 @@ matter too much; we recommend the RStudio mirror.
 library(dplyr)    ## load the package
 ```
 
-What is `dplyr`?
-----------------
+## What is `dplyr`?
 
 The package `dplyr` provides easy tools for the most common data
 manipulation tasks. It is built to work directly with data frames. The
@@ -131,6 +129,7 @@ Using pipes, subset the data to include lots from `La Junta`, and retain
 the columns `lot`, `town`, and `toxin`.
 
 <!-- end challenge -->
+
 ### Mutate
 
 Frequently you’ll want to create new columns based on the values in
@@ -175,8 +174,8 @@ toxin %>%
     ## 5   E 1.32      26.5     9.04        9.8  19.3     Fowler 0.0132
     ## 6   F 0.51        NA     7.84       12.3  14.8     Fowler 0.0051
 
-The sixth row has an NA for noon\_temp, so if we wanted to remove all
-observations with a missing value for noon\_temp we could insert a
+The sixth row has an NA for noon_temp, so if we wanted to remove all
+observations with a missing value for noon_temp we could insert a
 `filter()` in this chain:
 
 ``` r
@@ -207,11 +206,12 @@ criteria:
     that are the square-root of `wind_speed` values (e.g. a new column
     `wind_sqrt`).
 -   In this `wind_sqrt` column, there are no NA values and all values
-    are &lt; 3.5.
+    are \< 3.5.
 
 Hint: think about how the commands should be ordered
 
 <!-- end challenge -->
+
 ### Split-apply-combine data analysis and the summarize() function
 
 Many data analysis tasks can be approached using the
@@ -228,7 +228,7 @@ toxin %>%
   tally()
 ```
 
-    ## # A tibble: 6 x 2
+    ## # A tibble: 6 × 2
     ##   town           n
     ##   <chr>      <int>
     ## 1 Fowler         2
@@ -250,9 +250,7 @@ toxin %>%
   summarize(mean_toxin = mean(toxin, na.rm = TRUE))
 ```
 
-    ## `summarise()` ungrouping output (override with `.groups` argument)
-
-    ## # A tibble: 6 x 2
+    ## # A tibble: 6 × 2
     ##   town       mean_toxin
     ##   <chr>           <dbl>
     ## 1 Fowler           17.0
@@ -266,7 +264,7 @@ Weird warning message: `summarise()` ungrouping output (override with
 `.groups` argument)
 
 Solution:
-<a href="https://rstats-tips.net/2020/07/31/get-rid-of-info-of-dplyr-when-grouping-summarise-regrouping-output-by-species-override-with-groups-argument/" class="uri">https://rstats-tips.net/2020/07/31/get-rid-of-info-of-dplyr-when-grouping-summarise-regrouping-output-by-species-override-with-groups-argument/</a>
+<https://rstats-tips.net/2020/07/31/get-rid-of-info-of-dplyr-when-grouping-summarise-regrouping-output-by-species-override-with-groups-argument/>
 
 ``` r
 # Suppress summarise info
@@ -279,7 +277,7 @@ toxin %>%
   summarize(mean_toxin = mean(toxin, na.rm = TRUE))
 ```
 
-    ## # A tibble: 6 x 2
+    ## # A tibble: 6 × 2
     ##   town       mean_toxin
     ##   <chr>           <dbl>
     ## 1 Fowler           17.0
@@ -299,7 +297,7 @@ toxin %>%
   arrange(mean_toxin)
 ```
 
-    ## # A tibble: 6 x 2
+    ## # A tibble: 6 × 2
     ##   town       mean_toxin
     ##   <chr>           <dbl>
     ## 1 Fowler           17.0
@@ -318,7 +316,7 @@ toxin %>%
   arrange(desc(mean_toxin))
 ```
 
-    ## # A tibble: 6 x 2
+    ## # A tibble: 6 × 2
     ##   town       mean_toxin
     ##   <chr>           <dbl>
     ## 1 Swink            23.8
@@ -338,7 +336,7 @@ toxin %>%
   arrange(desc(mean_toxin))
 ```
 
-    ## # A tibble: 6 x 3
+    ## # A tibble: 6 × 3
     ##   town       mean_toxin min_toxin
     ##   <chr>           <dbl>     <dbl>
     ## 1 Swink            23.8      23.8
@@ -351,9 +349,10 @@ toxin %>%
 ### Challenge
 
 Use `group_by()` and `summarize()` to find the mean, min, and max
-noon\_temp length for each town
+noon_temp length for each town
 
 <!-- end challenge -->
+
 ### A bit of data cleaning
 
 In preparations for the plotting, let’s do a bit of data cleaning:
