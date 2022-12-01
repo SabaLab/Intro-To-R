@@ -10,7 +10,7 @@ experience. These lessons start with some basic information about R syntax, the 
 (This particular set of lessons was originally revised by [Karl Broman](http://kbroman.org) for a
 [Data Carpentry workshop](http://uw-madison-aci.github.io/2016-06-01-uwmadison/) at UW-Madison on 1-2 June 2016.)
 
-The current version was revised by [Laura Saba](https://www.thesabalab.com/) for an introductory lecture in TXCL7565 at the University of Colorado Anschutz Medical Campus on December 2, 2021.
+The current version was revised by [Laura Saba](https://www.thesabalab.com/) for an introductory lecture in TXCL7565 at the University of Colorado Anschutz Medical Campus on December 1, 2022.
 
 > ## Prerequisites
 >
