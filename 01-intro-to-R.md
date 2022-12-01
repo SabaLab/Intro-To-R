@@ -38,11 +38,14 @@ visualize the plots we will generate. RStudio can also be used for other
 things (e.g., version control, developing packages) that we will not
 cover during this introductory class.
 
-RStudio is divided into 4 “Panes”: the editor for your scripts and
-documents (top-left), the R console (bottom-left), your
+Typically, RStudio is divided into 4 “Panes”: the editor for your
+scripts and documents (top-left), the R console (bottom-left), your
 environment/history (top-right), and your
 files/plots/packages/help/viewer (bottom-right). The placement of these
 panes and their content can be customized.
+
+When you first open RStudio, you may not see the editor pane because you
+need to open a new script.
 
 ## R as a calculator
 
@@ -58,10 +61,10 @@ this when teaching but not otherwise.
 Let’s start by subtracting a couple of numbers.
 
 ``` r
-2021 - 1979
+2022 - 1979
 ```
 
-    ## [1] 42
+    ## [1] 43
 
 R does the calculation and prints the result, and then you get the `>`
 prompt again. (The `[1]` in the results is a bit weird; you can ignore
@@ -205,8 +208,9 @@ it gives the data a name.
 You can also use `=` as assignment, but that symbol can have other
 meanings, and so I recommend sticking with the `<-` combination.
 
-In RStudio, typing <kbd>Alt</kbd> + <kbd>-</kbd> will write `<-` in a
-single keystroke.
+In RStudio, typing <kbd>Alt</kbd> + <kbd>-</kbd> on a PC or
+<kbd>option</kbd> + <kbd>-</kbd> on a Mac will write `<-` in a single
+keystroke.
 
 ### Objects in your workspace
 

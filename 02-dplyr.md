@@ -17,13 +17,6 @@ session when you’ll need it.
 install.packages("dplyr")
 ```
 
-While we’re installing stuff, let’s also install the ggplot2 package,
-which we’ll use next.
-
-``` r
-install.packages("ggplot2")
-```
-
 You might get asked to choose a CRAN mirror – this is basically asking
 you to choose a site to download the package from. The choice doesn’t
 matter too much; we recommend the RStudio mirror.
@@ -260,33 +253,6 @@ toxin %>%
     ## 5 Rocky Ford       23.4
     ## 6 Swink            23.8
 
-Weird warning message: `summarise()` ungrouping output (override with
-`.groups` argument)
-
-Solution:
-<https://rstats-tips.net/2020/07/31/get-rid-of-info-of-dplyr-when-grouping-summarise-regrouping-output-by-species-override-with-groups-argument/>
-
-``` r
-# Suppress summarise info
-options(dplyr.summarise.inform = FALSE)
-```
-
-``` r
-toxin %>%
-  group_by(town) %>%
-  summarize(mean_toxin = mean(toxin, na.rm = TRUE))
-```
-
-    ## # A tibble: 6 × 2
-    ##   town       mean_toxin
-    ##   <chr>           <dbl>
-    ## 1 Fowler           17.0
-    ## 2 La Junta         17.6
-    ## 3 Ordway           19  
-    ## 4 Pueblo           19.1
-    ## 5 Rocky Ford       23.4
-    ## 6 Swink            23.8
-
 Another thing we might do here is sort rows by `mean_toxin`, using
 `arrange()`.
 
@@ -348,34 +314,10 @@ toxin %>%
 
 ### Challenge
 
-Use `group_by()` and `summarize()` to find the mean, min, and max
-noon_temp length for each town
+Use `group_by()` and `summarize()` to find the mean, min, and max of
+noon_temp for each town
 
 <!-- end challenge -->
-
-### A bit of data cleaning
-
-In preparations for the plotting, let’s do a bit of data cleaning:
-remove rows with missing `wind_speed` or `noon_temp`.
-
-``` r
-toxin_complete <- toxin %>%
-    filter(!is.na(wind_speed), !is.na(noon_temp)) 
-```
-
-There are two lots with `noon_temp` less than 25 degrees Celsius. Let’s
-remove lots an average noon temperature less than 25 degrees.
-
-``` r
-reduced <- toxin_complete %>%
-    filter(noon_temp>25)
-```
-
-We might save this to a file:
-
-``` r
-write.csv(reduced, "data/reduced_toxin.csv")
-```
 
 [Handy dplyr
 cheatsheet](http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
