@@ -61,10 +61,10 @@ this when teaching but not otherwise.
 Let’s start by subtracting a couple of numbers.
 
 ``` r
-2022 - 1979
+2023 - 1979
 ```
 
-    ## [1] 43
+    ## [1] 44
 
 R does the calculation and prints the result, and then you get the `>`
 prompt again. (The `[1]` in the results is a bit weird; you can ignore
@@ -131,7 +131,7 @@ Start by typing the following into the R script in the top-left pane.
 ``` r
 # R intro
 
-2021 - 1979
+2023 - 1979
 ```
 
 NOTE: I will use <kbd>`Ctrl`</kbd> in the instructions below. Most
@@ -141,7 +141,7 @@ its place for Macs.
 Save the file clicking the computer disk icon, or by typing
 <kbd>`Ctrl`</kbd> + <kbd>`S`</kbd>.
 
-Now place the cursor on the line with `2021 - 1979` and type
+Now place the cursor on the line with `2023 - 1979` and type
 <kbd>`Ctrl`</kbd> + <kbd>`Enter`</kbd>. The command will be copied to
 the R console and executed, and then the cursor will move to the next
 line.
